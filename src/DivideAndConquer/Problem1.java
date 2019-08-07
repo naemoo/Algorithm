@@ -1,4 +1,4 @@
-package DivideandConquer;
+package DivideAndConquer;
 
 /*
  * 백준 : 2630번(색종이 만들기)
