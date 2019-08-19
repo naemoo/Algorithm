@@ -1,6 +1,6 @@
 package DP;
 /*
- * ¹éÁØ : 10844¹ø(½¬¿î °è´Ü ¼ö)
+ * ë°±ì¤€(10844ë²ˆ) : ì‰¬ìš´ê³„ë‹¨ìˆ˜(DP)
 */
 import java.util.Arrays;
 import java.util.Scanner;
