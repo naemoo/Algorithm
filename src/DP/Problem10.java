@@ -1,9 +1,10 @@
 package DP;
 
 /*
- * ¹éÁØ : 2156¹ø(Æ÷µµÁÖ ½Ã½Ä)
- * ºñ½ÁÇÑ ¹®Á¦ : ¹éÁØ(2579¹ø)°è´Ü¿À¸£±â
-*/import java.util.Scanner;
+ * ë°±ì¤€ (2156ë²ˆ) : í¬ë„ì£¼ì‹œì‹(DP) 
+ *https://www.acmicpc.net/problem/2156 
+*/
+import java.util.Scanner;
 
 public class Problem10 {
 	public static void main(String[] args) {
