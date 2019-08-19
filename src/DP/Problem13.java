@@ -1,6 +1,7 @@
 package DP;
 /*
  * 백준 : 1520(내리막 길)
+ * https://www.acmicpc.net/problem/1520
  */
 import java.io.*;
 import java.util.Arrays;
