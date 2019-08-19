@@ -1,6 +1,7 @@
 package DP;
 /*
- *πÈ¡ÿ 1149πÆ¡¶ : RGB∞≈∏Æ 
+ *Î∞±Ï§Ä(1149Î≤à) : RGBÍ±∞Î¶¨(DP)
+ *https://www.acmicpc.net/problem/1149
 */
 import java.util.Scanner;
 
