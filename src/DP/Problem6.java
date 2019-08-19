@@ -1,7 +1,8 @@
 package DP;
 
 /*
- * ¹éÁØ:1904¹ø(01Å¸ÀÏ)
+ * ë°±ì¤€ (1904) : 01íƒ€ì¼(DP)
+ *https://www.acmicpc.net/problem/1904
 */
 import java.util.Scanner;
 
