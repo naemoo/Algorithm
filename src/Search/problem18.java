@@ -34,7 +34,7 @@ class Solution {
     	}
     }
     //조건에 맞지 않은 숫자 지우기
-    //주어진 스트라이크와 볼이 맞지않으면 숫자 제거   
+    //주어진 스트라이크와 볼이 맞지않으면 숫자 제거
     public void baseballGame(int[] requirement) {
     	String str = String.valueOf(requirement[0]);
     	for(int i = 0 ; i < list.size();i++) {
