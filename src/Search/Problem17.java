@@ -49,7 +49,6 @@ public class Problem17 {
 		Solution17 s = new Solution17();
 		String[][] tickets = {{"ICN", "JFK"}, {"HND", "IAD"}, {"JFK", "HND"}};
 //		String[][] tickets = {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
-		System.out.print("answer : ");
 		for(String str : s.solution(tickets))
 			System.out.print(str+" ");
 	}
