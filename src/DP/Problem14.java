@@ -15,7 +15,6 @@ class Point{
 	}
 }
 
-
 class Solution {
 	int[] dx = {1,0,-1,0};
 	int[] dy = {0,1,0,-1};
@@ -62,6 +61,6 @@ class Solution {
 public class Problem14 {
 	public static void main(String[] args) {
 		Solution s = new Solution();
-		System.out.println(s.solution(100, 1, new int[][]{{,1}}));
+		System.out.println(s.solution(100, 1, new int[][]{{}}));
 	}
 }
