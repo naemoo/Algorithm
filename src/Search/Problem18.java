@@ -54,7 +54,7 @@ class Solution {
     }
 }
 
-public class problem18{
+public class Problem18{
 	public static void main(String[] args) {
 		Solution s = new Solution();
 		int answer = s.solution(new int[][] {{123,1,1},{356,1,0},{327,2,0},{489,0,1}});
