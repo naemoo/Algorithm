@@ -1,5 +1,8 @@
 package BackTracking;
-
+/*
+ * 백준 : N-Queen(9663번) 
+ * https://www.acmicpc.net/problem/9663 
+*/
 import java.util.Scanner;
 
 public class Problem2 {
