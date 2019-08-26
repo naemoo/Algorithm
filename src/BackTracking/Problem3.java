@@ -1,5 +1,10 @@
 package BackTracking;
 
+/*
+ * 백준 : 스도쿠(2580번)
+ * https://www.acmicpc.net/problem/2580 
+*/
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
