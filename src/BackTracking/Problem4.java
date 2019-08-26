@@ -1,5 +1,9 @@
 package BackTracking;
 
+/*
+ * 백준 : 암호만들기(1759번)
+ * https://www.acmicpc.net/problem/1759 
+*/
 import java.util.Arrays;
 import java.util.Scanner;
 
