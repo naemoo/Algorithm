@@ -1,5 +1,8 @@
 package BackTracking;
-
+/*
+ * 백준(백트래킹) : N과 M(2) (15650번)
+ * https://www.acmicpc.net/problem/15650 
+*/
 import java.util.Scanner;
 
 public class Problem1 {
