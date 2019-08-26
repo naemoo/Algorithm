@@ -1,8 +1,13 @@
 package BackTracking;
 
+/*
+ * ë°±ì¤€ : ì¢‹ì€ìˆ˜ì—´(2661ë²ˆ)
+ * https://www.acmicpc.net/problem/2661 
+*/
+
 import java.util.Scanner;
 
-public class Main {
+public class Problem5 {
 	static int n;
 	static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) {
@@ -29,7 +34,7 @@ public class Main {
 		}
 		for(int i = 1;i<=3;i++) {
 			sb.append(i);
-			if(isRepeat(d,i)) //¹éÆ®·¡Å· Á¶°Ç ¹®
+			if(isRepeat(d,i)) 
 				per(d+1);
 			sb.delete(d, d+1);
 		}
