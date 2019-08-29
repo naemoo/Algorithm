@@ -61,7 +61,7 @@ class Solution20 {
     }
 }
 
-public class Problem20 {
+public class Problem2 {
 	public static void main(String[] args) {
 		Solution20 s = new Solution20();
 		int n = s.solution("17");
