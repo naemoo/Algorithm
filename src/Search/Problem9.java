@@ -1,5 +1,10 @@
 package Search;
 
+/*
+ * 백준 : 나이트의 이동(BFS탐색)
+ * https://www.acmicpc.net/problem/7562
+*/
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
