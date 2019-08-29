@@ -1,5 +1,9 @@
 package Search;
 
+/*
+ * 백준 : 연결 요소의 개수(11724번)
+ * https://www.acmicpc.net/problem/11724
+*/
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -45,23 +49,3 @@ class Problem1{
 	}
 }
 
-/*String[] str = s.nextLine().split(" ");
-int v = Integer.valueOf(str[0]);
-int n = Integer.valueOf(str[1]);
-
-for(int i=0;i<n;i++) {
-	str = s.nextLine().split(" ");
-	p_list.add(new Point(Integer.valueOf(str[0]),Integer.valueOf(str[1])));
-}//���� ����
-
-for(int i = 0 ; i < v;i++)//���� �߰�
-	list.add(new LinkedList<Integer>());
-
-Collections.sort(p_list);
-
-visit = new int[v];
-
-for(int i = 0 ; i < n;i++) {
-	list.get(p_list.get(i).x-1).add(p_list.get(i).y-1);
-	list.get(p_list.get(i).y-1).add(p_list.get(i).x-1);
-}*/
