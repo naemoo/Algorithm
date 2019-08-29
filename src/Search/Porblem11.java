@@ -1,5 +1,10 @@
 package Search;
 
+/*
+ * 백준 : 유기농 배추(BFS탐색)
+ * https://www.acmicpc.net/problem/1012
+*/
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
