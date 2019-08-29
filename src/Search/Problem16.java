@@ -1,5 +1,9 @@
 package Search;
 
+/*
+ * 백준 : 벽 부수고 이동하기(BFS탐색)
+ * https://www.acmicpc.net/problem/2206
+*/
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
