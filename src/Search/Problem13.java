@@ -1,5 +1,10 @@
 package Search;
 
+/*
+ * 백준 : 알파벳(DFS탐색)
+ * https://www.acmicpc.net/problem/1987
+*/
+
 import java.util.Scanner;
 
 public class Problem13 {
