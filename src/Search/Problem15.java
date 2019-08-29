@@ -1,5 +1,10 @@
 package Search;
 
+/*
+ * 백준 : 바이러스(BFS탐색)
+ * https://www.acmicpc.net/problem/2606
+*/
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
