@@ -1,5 +1,9 @@
 package Search;
 
+/*
+ * 백준 : DFS와 BFS(DFS,BFS 기본문제)
+ * https://www.acmicpc.net/problem/1260
+*/
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -8,8 +12,8 @@ public class Problem8 {
 	static Queue<Integer> q = new LinkedList<>();
 	static int[][] graph;
 	static int[] visit;
-	static int v;//����
-	static int e;//����
+	static int v;
+	static int e;
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		v = s.nextInt();
