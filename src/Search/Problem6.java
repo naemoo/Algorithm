@@ -1,5 +1,9 @@
 package Search;
 
+/*
+ * 백준 : 경로찾기(BFS탐색)
+ * https://www.acmicpc.net/problem/11403
+*/
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
