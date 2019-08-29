@@ -1,5 +1,9 @@
 package Search;
 
+/*
+ * 백준 : 미로탐색(BFS탐색)
+ * https://www.acmicpc.net/problem/2178
+*/
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -25,7 +29,7 @@ class problem5{
 				map[i][j] = str.charAt(j) - '0';
 			}
 		}
-		BFS(0, 0);//����
+		BFS(0, 0);
 		System.out.println(map[n-1][m-1]);
 	}
 	
