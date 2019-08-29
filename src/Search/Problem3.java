@@ -1,9 +1,13 @@
 package Search;
 
+/*
+ * 백준 : 적록색약(BFS탐색)
+ * https://www.acmicpc.net/problem/10026
+*/
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-
 
 public class Problem3 {
 	static Queue<Point> q = new LinkedList<>();
@@ -30,8 +34,8 @@ public class Problem3 {
 			}
 		}
 		
-		int bld_cnt = 0;//���� 
-		int nol_cnt = 0;//�Ϲݻ��
+		int bld_cnt = 0;//색맹인사람 
+		int nol_cnt = 0;//일반 사람
 		
 		for(int i = 0 ; i <n;i++)
 			for(int j = 0 ; j<n;j++) 
