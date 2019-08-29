@@ -1,5 +1,10 @@
 package Search;
 
+/*
+ * 백준 : 토마토(BFS탐색)
+ * https://www.acmicpc.net/problem/7576
+*/
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
