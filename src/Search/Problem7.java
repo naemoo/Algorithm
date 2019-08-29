@@ -1,5 +1,8 @@
 package Search;
-
+/*
+ * 백준 : 연구소(BFS+DFS+백트래킹)
+ * https://www.acmicpc.net/problem/14502
+*/
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
