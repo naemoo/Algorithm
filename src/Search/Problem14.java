@@ -1,5 +1,9 @@
 package Search;
 
+/*
+ * 백준 : 토마토(BFS탐색)
+ * https://www.acmicpc.net/problem/7569
+*/
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -18,7 +22,7 @@ public class Problem14 {
 	static int cnt = 0;
 	static int[] dx = {1,0,-1,0,0,0};
 	static int[] dy = {0,1,0,-1,0,0};
-	static int[] dz = {0,0,0,0,1,-1};//�� �Ʒ�
+	static int[] dz = {0,0,0,0,1,-1};
 	static int[][][] map;
 	static int[][][] visit;
 	static int m,n,h;
