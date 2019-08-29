@@ -1,34 +1,37 @@
 package Search;
 
+/*
+ * 백준 : 단지번호붙이기(BFS탐색)
+ * https://www.acmicpc.net/problem/2667
+*/
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-
-
 public class Problem4 {
 	static int n;
-	static int[] dx = {0,1,0,-1};//������ �Ʒ� �� ����
+	static int[] dx = {0,1,0,-1};
 	static int[] dy = {1,0,-1,0};
 	static int[][] map;
 	static int[][] visit;
 	static Queue<Point> q = new LinkedList<>();
 	static ArrayList al = new ArrayList();
 	public static void main(String[] args) {
-		 Scanner scan = new Scanner(System.in);
-	        int call_num = 0;
-	        n = scan.nextInt();    
+		
+		Scanner scan = new Scanner(System.in);
+	    int call_num = 0;
+	    n = scan.nextInt();    
 	        
-	        map = new int[n][n];
-	        visit = new int[n][n];
-	        String temp;
+	    map = new int[n][n];
+	    visit = new int[n][n];
+	    String temp;
 	        
-	        for(int i=0;i<n;i++) {
-	            temp = scan.next();
-	            for(int j=0;j<n;j++) 
-	                map[i][j] = temp.charAt(j)-'0'; 
+	    for(int i=0;i<n;i++) {
+	    	temp = scan.next();
+	        for(int j=0;j<n;j++) 
+	            map[i][j] = temp.charAt(j)-'0'; 
 	        }
 	        for(int i=0;i<n;i++)
 	            for(int j=0;j<n;j++) 
@@ -71,49 +74,3 @@ public class Problem4 {
         al.add(local_cnt);
     }
 }
-
-/*
-for(int i = 0;i<n;i++) {
-	for(int j = 0 ; j<n;j++) {
-		if(apartment[i][j] == 1)
-			list.add(BFS(i, j));
-	}
-}
-Collections.sort(list);
-System.out.println(adr-1);
-for(int i = 0 ; i < list.size();i++) {
-	System.out.println(list.get(i));
-}
-
-for(int i = 0;i<n;i++) { 
-	for(int j = 0 ; j<n;j++) 
-		System.out.print(apartment[i][j]+ " ");
-	System.out.println();
-}*/
-/*
-static int BFS(int x, int y) {
-	adr++;//����
-	int count = 0;
-	Queue<Dot> q = new LinkedList<>();
-	int nx,ny;
-	q.add(new Dot(x,y));
-	while(!q.isEmpty()) {
-		x = q.peek().x;
-		y = q.poll().y;
-		
-		for(int i = 0 ; i < 4;i++) {
-			nx = x + dx[i];
-			ny = y + dy[i];
-			if(nx<0|| nx >=n|| ny<0 || ny>=n)
-				continue;
-			if(apartment[nx][ny] != 1)
-				continue;
-			q.add(new Dot(nx,ny));
-			apartment[nx][ny] = adr;
-			count++;
-		}
-	}
-	return count;
-}*/
-
-
