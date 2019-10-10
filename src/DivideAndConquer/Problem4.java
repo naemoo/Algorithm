@@ -5,7 +5,7 @@ import java.util.Arrays;
 //기본 퀵소트
 /* 시간 복잡도
  * 최악의 경우 : 정렬된 데이터 -> O(n^2)
- * 평균 : O(nlogn)
+ * 평균적 경우 : O(nlogn)
  */
 
 public class Problem4 {
