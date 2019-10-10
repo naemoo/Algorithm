@@ -37,7 +37,7 @@ public class Problem4 {
 		pivotpoint = j;
 		swap(low,pivotpoint);
 	}
-	
+	//배열 S 인덱스 0값 = 더미 값
 	public static void main(String[] args) {
 		S = new int[] {111,4,7,6,2,1,5,3};
 		quicksort(1, S.length-1);
