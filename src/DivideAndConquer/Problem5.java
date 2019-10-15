@@ -8,10 +8,11 @@ package DivideAndConquer;
   		7번의 곱셈 -> 재귀 7번!(분할 정복)
 	조건 : 행렬의 크기 2n(짝수)
  
+ *	임계점 보다 n이 작을 경우 단순한 행렬보다 좋은 성능을 보이지 않는다.
  */
 
 public class Problem5 {
-	static int threshold = 2; //임계점
+	static int threshold = 1; //임계점
 	//행렬 뺄셈
 	public static void subMatrix(int n,int[][] A,int[][] B,int[][] C) {//행렬 뺄셈
 		int i,j;
@@ -105,9 +106,9 @@ public class Problem5 {
 			
 			subMatrix(newCol, B12, B22, tempA);
 			strassan(newCol, A11, tempA, m3);//m3 = a11(b12-b22)
-		
+			
 			subMatrix(newCol, B21, B11, tempA);
-			strassan(newCol, A22, tempA, B11);//m4 = a22(b21-b11)
+			strassan(newCol, A22, tempA, m4);//m4 = a22(b21-b11)
 			
 			addMatrix(newCol, A11, A12, tempA);
 			strassan(newCol, tempA, B22, m5);//m5 = (a11+a12)b22
@@ -141,12 +142,12 @@ public class Problem5 {
 	}
 
 	public static void main(String[] args) {
-		int[][] A = new int[][]{{0,0,0,0,0,0,0,0,0},{0,1,2,3,4,5,6,7,8},{0,1,2,3,4,5,6,7,8},{0,1,2,3,4,5,6,7,8},
-			{0,1,2,3,4,5,6,7,8},{0,1,2,3,4,5,6,7,8},{0,1,2,3,4,5,6,7,8},{0,1,2,3,4,5,6,7,8},{0,1,2,3,4,5,6,7,8}};//8x8
+		int[][] A = new int[][]{{0,0,0,0,0},{0,1,2,3,4},{0,5,6,7,8},{0,9,1,2,3},{0,4,5,6,7}};//4x4 0 번 인덱스 더미
+		int[][] B = new int[][]{{0,0,0,0,0},{0,8,9,1,2},{0,3,4,5,6},{0,7,8,9,1},{0,2,3,4,5}};//4x4 0 번 인덱스  더미
 		int n = A.length-1;
 		int[][] C = new int[n+1][n+1];
 		
-		strassan(n, A, A, C);
+		strassan(n, A, B, C);
 		
 		for (int i = 1;i<=n;i++) {
 			for(int j =1 ;j<=n;j++){
