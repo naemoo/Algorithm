@@ -12,7 +12,7 @@ package DivideAndConquer;
  */
 
 public class Problem5 {
-	static int threshold = 1; //임계점
+	static int threshold = 1; //임계점 설정
 	//행렬 뺄셈
 	public static void subMatrix(int n,int[][] A,int[][] B,int[][] C) {//행렬 뺄셈
 		int i,j;
@@ -119,7 +119,7 @@ public class Problem5 {
 			
 			subMatrix(newCol, A12, A22, tempA);
 			addMatrix(newCol, B21, B22, tempB);
-			strassan(newCol, tempA, tempB, m7);//m7 = (a11-a22)(b21+b22)
+			strassan(newCol, tempA, tempB, m7);//m7 = (a12-a22)(b21+b22)
 			
 			//c11 c12 c21 c22 만들기
 			int[][] c11 = new int[newRow+1][newCol+1];	int[][] c12 = new int[newRow+1][newCol+1];
@@ -155,6 +155,19 @@ public class Problem5 {
 			}
 			System.out.println();
 		}
+		
+		A = new int[][]{{0,0,0,0,0},{0,1,3,1,0},{0,1,3,0,1},{0,1,0,1,3},{0,0,1,1,3}};//4x4 0 번 인덱스 더미
+		B = new int[][]{{0,0,0,0,0},{0,1,0,1,2},{0,0,1,3,1},{0,2,4,1,0},{0,3,1,0,1}};//4x4 0 번 인덱스  더미
+
+		strassan(n, A, B, C);
+		
+		System.out.println();
+		for (int i = 1;i<=n;i++) {
+			for(int j =1 ;j<=n;j++){
+				System.out.print(C[i][j]+" ");
+			}
+			System.out.println();
+		}
 	}
 
-}
+} 
