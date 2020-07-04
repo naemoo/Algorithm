@@ -73,5 +73,6 @@ public class Problem2 {
 		for(int i:answer) {
 			System.out.print(i+" ");
 		}//1,2
+		
 	} 
 }
