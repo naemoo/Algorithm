@@ -6,20 +6,17 @@
 package Kakao;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 class Solution {
     public int[] solution(String msg) {
-    	Queue<String> queue = new LinkedList<>();
+    	Queue<String> queue = new LinkedList<>(Arrays.stream(msg.split("")).collect(Collectors.toList()));
     	List<Integer> answer = new LinkedList<>();
     	HashMap<String, Integer> dictionary = new HashMap<>();
     	int dictIdx = 1;
     	
     	for(char c = 'A';c<='Z';c++) {
     		dictionary.put(String.valueOf(c), dictIdx++);
-    	}
-    	
-    	for(String str:msg.split("")) {
-    		queue.add(str);
     	}
     	
     	String w;
