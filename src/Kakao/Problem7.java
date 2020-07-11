@@ -6,11 +6,10 @@
 package Kakao;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 class Solution {
     public int[] solution(String msg) {
-    	Queue<String> queue = new LinkedList<>(Arrays.stream(msg.split("")).collect(Collectors.toList()));
+    	Queue<String> queue = new LinkedList<>(Arrays.asList(msg.split("")));
     	List<Integer> answer = new LinkedList<>();
     	HashMap<String, Integer> dictionary = new HashMap<>();
     	int dictIdx = 1;
