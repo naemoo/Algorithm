@@ -7,7 +7,7 @@ package Kakao;
 
 import java.util.*;
 
-public class Problem4 {
+public class Problem04 {
 	static class BroadCast{
 		int broadCastTime;
 		String title;
