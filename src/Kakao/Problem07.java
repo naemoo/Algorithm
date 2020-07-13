@@ -7,8 +7,8 @@ package Kakao;
 
 import java.util.*;
 
-class Solution {
-    public int[] solution(String msg) {
+public class Problem07 {
+    public static int[] solution(String msg) {
     	Queue<String> queue = new LinkedList<>(Arrays.asList(msg.split("")));
     	List<Integer> answer = new LinkedList<>();
     	HashMap<String, Integer> dictionary = new HashMap<>();
@@ -33,13 +33,8 @@ class Solution {
     	}
     	return answer.stream().mapToInt(Integer::valueOf).toArray();
     }
-}
-
-
-public class Problem7 {
 	public static void main(String[] args) {
-		Solution s = new Solution();
-		int[] arr = s.solution("ABABABABABABABAB");
+		int[] arr = solution("ABABABABABABABAB");
 		for(int i:arr) {
 			System.out.println(i);
 		}
