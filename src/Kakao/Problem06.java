@@ -7,8 +7,8 @@ package Kakao;
 
 import java.util.*;
 
-class Solution{
-	public int solution(int cacheSize,String[] cities) {
+public class Problem06 {
+	public static int solution(int cacheSize,String[] cities) {
 		List<String> cache = new LinkedList<>();
         int idx = 0;
         int exeTime = 0;
@@ -34,7 +34,7 @@ class Solution{
         return exeTime;
 	}
 
-	private int findHitIndex(List<String> cache, String city) {
+	private static int findHitIndex(List<String> cache, String city) {
 		for (int i = 0; i < cache.size(); i++) {
 			if(cache.get(i).compareToIgnoreCase(city)==0) {
 				return i;
@@ -42,16 +42,13 @@ class Solution{
 		}
 		return -1;
 	}
-}
-
-public class Problem6 {
+	
 	public static void main(String[] args) {
-		Solution s = new Solution();
-		s.solution(3,new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"});
-		s.solution(3,new String[]{"Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"});
-		s.solution(2,new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"});
-		s.solution(5,new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"});
-		s.solution(2,new String[]{"Jeju", "Pangyo", "NewYork", "newyork"});
-		s.solution(0,new String[]{"j", "s", "p", "j", "s","p","j","j","j","s","p"});
+		solution(3,new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"});
+		solution(3,new String[]{"Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"});
+		solution(2,new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"});
+		solution(5,new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"});
+		solution(2,new String[]{"Jeju", "Pangyo", "NewYork", "newyork"});
+		solution(0,new String[]{"j", "s", "p", "j", "s","p","j","j","j","s","p"});
 	}
 }
