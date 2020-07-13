@@ -8,7 +8,7 @@ package Kakao;
 
 import java.util.*;
 
-public class Problem2 {
+public class Problem02 {
 	static class Failure{
 		int stage;
 		int num;
