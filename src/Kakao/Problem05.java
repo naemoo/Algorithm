@@ -8,7 +8,7 @@ package Kakao;
 
 import java.util.*;
 
-public class Problem5 {
+public class Problem05 {
 	static int[] dx = {1,0,1};
 	static int[] dy = {0,1,1};
 	
