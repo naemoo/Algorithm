@@ -4,13 +4,12 @@ package Kakao;
  * 2019 KAKAO BLIND RECRUITMENT
  * 후보키 (부분 집합 문제)
  * https://programmers.co.kr/learn/courses/30/lessons/42890
- * 
 */
 
 
 import java.util.*;
 
-public class Problem3 {
+public class Problem03 {
     public static int solution(String[][] relation) {
     	int answer =0;
     	int row = relation.length;
