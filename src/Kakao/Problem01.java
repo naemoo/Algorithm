@@ -8,7 +8,7 @@ import java.util.*;
  * https://programmers.co.kr/learn/courses/30/lessons/42888
  */
 
-public class Problem1 {
+public class Problem01 {
 	static public String[] solution(String[] record) {
 		HashMap<String, String> user_map = new HashMap<>();
 		List<String> ans = new LinkedList<>();
