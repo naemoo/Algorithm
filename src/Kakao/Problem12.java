@@ -34,11 +34,11 @@ public class Problem12 {
     			}
 			}
     	}
-    	DFS(0,n,weak,dist);
+    	DFS(0,n,weak);
         return min != Integer.MAX_VALUE? min :-1;
     }
     
-	private static void DFS(int d,int n,int[] weak,int[] dist) {
+	private static void DFS(int d,int n,int[] weak) {
 		if(Arrays.stream(weak).allMatch(idx->visit[idx]==1)) {
 			min = Math.min(min, d);
 			return;
@@ -56,7 +56,7 @@ public class Problem12 {
 				continue;
 			}
 			IntStream.range(i, checkRange[d][i]).map(idx->idx%n).forEach(idx->visit[idx] =1);
-			DFS(d+1,n,weak,dist);
+			DFS(d+1,n,weak);
 			IntStream.range(i, checkRange[d][i]).map(idx->idx%n).forEach(idx->visit[idx] =0);
 		}
 	}
