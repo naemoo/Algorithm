@@ -20,7 +20,7 @@ public class Problem12 {
     	visit = new int[n];
     	maxDepth = dist.length;
     	
-    	dist = Arrays.stream(dist).mapToObj(Integer::new).sorted(Comparator.reverseOrder())
+    	dist = Arrays.stream(dist).mapToObj(Integer::valueOf).sorted(Comparator.reverseOrder())
     		.mapToInt(Integer::valueOf).toArray();
     	
     	for(int i = 0 ; i < checkRange.length;i++) {
