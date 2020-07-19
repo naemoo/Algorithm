@@ -19,7 +19,7 @@ public class Problem15 {
 			 
 	     return elementDict.entrySet().stream()
 	    		 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-	    		 .map(set->set.getKey()).mapToInt(i->Integer.valueOf(i)).toArray();
+	    		 .map(set->set.getKey()).mapToInt(Integer::valueOf).toArray();
 	    }
 	 
 	public static void main(String[] args) {
