@@ -11,7 +11,7 @@ import java.util.regex.*;
 public class Problem15 {
 	public static int[] solution(String s) {
 		HashMap<String,Integer> map = new HashMap<>();
-		Pattern pattern = Pattern.compile("[0-9]");
+		Pattern pattern = Pattern.compile("[0-9]+");
 		Matcher matcher = pattern.matcher(s);
 		while(matcher.find()) 
 			map.put(matcher.group(),map.getOrDefault(matcher.group(), 0)+1);
