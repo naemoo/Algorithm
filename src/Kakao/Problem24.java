@@ -25,14 +25,17 @@ public class Problem24 {
 		if (curTime.compareTo(crew) >= 0) {
 		    cnt++;
 		    crews.poll();
-		    if (cnt >= m)
+		    if (cnt >= m) {
+			if(i == n-1)
+			    answer = getNextTime(crew, -1);
 			break;
+		    }
 		} else {
 		    break;
 		}
 	    }
 	    if (crews.isEmpty()) {
-		if(i == n-1)
+		if(i == n-1 && answer == null)
 		    answer = cnt < m ? curTime : getNextTime(crew, -1);
 	    }
 	}
@@ -61,7 +64,7 @@ public class Problem24 {
 
     public static void main(String[] args) {
 	String ans;
-	ans = solution(1, 1, 5, new String[] { "08:00", "08:01", "08:02", "08:03" });
+	ans = solution(2, 10, 3, new String[] { "09:00", "09:00", "09:00", "09:10" });
 	System.out.println(ans);
 	ans = solution(2, 10, 2, new String[] { "09:10", "09:10", "08:00" });
 	System.out.println(ans);
