@@ -57,8 +57,8 @@ public class Problem29 {
 	    return cnt;
 	}
 
-	public void mappingWeb(HashMap<String, Web> webs) {
-	    for (Web web : webs.values()) {
+	public void mappingWeb(List<Web> webs) {
+	    for (Web web : webs) {
 		if (web.hrefURL.contains(url)) {
 		    hrefWeb.add(web);
 		}
@@ -90,21 +90,20 @@ public class Problem29 {
 	urlPattern = Pattern.compile("(?<=\\<meta.*content=\\\"https://).*(?=\\\"/\\>)");
 	hrefPattern = Pattern.compile("(?<=\\<a\\shref.+https://).*?(?=\\\")");
 	
-	HashMap<String, Web> webs = new HashMap<>();
+	List<Web> webs = new LinkedList<>();
 	int idx = 0;
 	for (String page : pages) {
-	    Web web = new Web(page, idx++);
-	    webs.put(web.url, web);
+	    webs.add(new Web(page, idx++) );
 	}
 
-	for (Web web : webs.values()) {
+	for (Web web : webs) {
 	    web.mappingWeb(webs);
 	}
 
-	for (Web web : webs.values()) {
+	for (Web web : webs){
 	    web.getLinkScore();
 	}
-	return webs.entrySet().stream().map(set -> set.getValue()).sorted().findFirst().get().idx;
+	return webs.stream().sorted().findFirst().get().idx;
     }
 
     public static void main(String[] args) {
