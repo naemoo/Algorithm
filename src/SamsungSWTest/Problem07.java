@@ -104,14 +104,14 @@ public class Problem07 {
     }
 
     private static int getBlackArea(int[][] map) {
-	int answer = 0;
+	int areas = 0;
 	for (int[] rows : map) {
 	    for (int ele : rows) {
 		if (ele == 0)
-		    answer++;
+		    areas++;
 	    }
 	}
-	return answer;
+	return areas;
     }
 
     private static void getCctv(int[][] map, int i) {
