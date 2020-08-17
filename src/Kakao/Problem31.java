@@ -1,3 +1,8 @@
+/*
+ * 2020 KAKAO BLIND RECRUITMENT
+ * https://programmers.co.kr/learn/courses/30/lessons/60060
+ * 기사 검색 (트라이 자료구조 문제)
+*/
 package Kakao;
 
 import java.util.*;
