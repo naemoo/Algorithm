@@ -27,11 +27,6 @@ public class Problem4 {
 	public int getWorkingTime(int end) {
 	    return end - request + consume;
 	}
-
-	@Override
-	public String toString() {
-	    return "Process [request=" + request + ", consume=" + consume + "]";
-	}
     }
 
     public static int solution(int[][] jobs) {
@@ -65,16 +60,11 @@ public class Problem4 {
 		end += tmp.consume;
 	    }
 	}
-	System.out.println(answer / jobs.length);
 	return answer / jobs.length;
     }
 
     public static void main(String[] args) {
 	solution(new int[][] { { 0, 3 }, { 1, 9 }, { 2, 6 } });
-	solution(new int[][] { { 0, 9 }, { 0, 4 }, { 0, 5 }, { 0, 7 }, { 0, 3 } });
-	solution(new int[][] { { 1, 9 }, { 1, 4 }, { 1, 5 }, { 1, 7 }, { 1, 3 } });
-	solution(new int[][] { { 0, 3 }, { 1, 9 }, { 500, 6 } });
-
     }
 
 }
