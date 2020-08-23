@@ -3,10 +3,9 @@ package DataStructure;
 import java.util.*;
 
 public class Heap<E extends Comparable> {
-    Object[] list;
+    List<E> list;
     private static final int HEAD = 1;
     private Comparator<E> comp = null;
-    private int end;
 
     public Heap(Comparator<E> comp) {
 	this();
@@ -14,14 +13,13 @@ public class Heap<E extends Comparable> {
     }
 
     public Heap() {
-	this.list = new Object[101];
-	list[0] = Integer.MIN_VALUE;
-	this.end = 0;
+	list = new LinkedList<>();
+	list.add(null);
     }
 
     public void add(E e) {
-	list[++end] = e;
-	int idx = end;
+	list.add(e);
+	int idx = list.size() - 1;
 
 	while (idx > 1) {
 	    E parent = getParent(idx);
@@ -36,24 +34,26 @@ public class Heap<E extends Comparable> {
     }
 
     private void swap(int idx, int parent) {
-	E tmp = getElement(idx);
-	list[idx] = list[parent];
-	list[parent] = tmp;
+	E tmp = list.set(idx, list.get(parent));
+	list.set(parent, tmp);
     }
 
     private int compare(E newNode, E parent) {
 	return comp == null ? newNode.compareTo(parent) : comp.compare(newNode, parent);
     }
 
-    public E pop() {
-	E remove = (E) list[HEAD];
-	swap(HEAD, end);
-	end--;
-	arrangeList(HEAD);
+    public E poll() {
+	E remove = list.remove(1);
+	if (list.size() -1 > 1) {
+	    list.add(1, list.remove(list.size() - 1));
+	    arrangeList(HEAD);
+	}
 	return remove;
     }
 
     private void arrangeList(int idx) {
+	int end = list.size() - 1;
+
 	if (idx * 2 > end) {
 	    return;
 	} else if (idx * 2 <= end && end < idx * 2 + 1) {
@@ -72,7 +72,7 @@ public class Heap<E extends Comparable> {
     }
 
     private E getElement(int idx) {
-	return (E) list[idx];
+	return list.get(idx);
     }
 
     private int getPriorityChild(int idx) {
@@ -80,30 +80,30 @@ public class Heap<E extends Comparable> {
     }
 
     private E getParent(int idx) {
-	return (E) list[idx / 2];
+	return list.get(idx / 2);
     }
 
     private E getLeftChild(int idx) {
-	return (E) list[idx * 2];
+	return list.get(idx * 2);
     }
 
     private E getRightChild(int idx) {
-	return (E) list[idx * 2 + 1];
+	return list.get(idx * 2 + 1);
     }
 
     public boolean hasNext() {
-	return end >= 1 ? true : false;
+	return list.size() - 1 >= 1 ? true : false;
     }
 
     public static void main(String[] args) {
 	Heap<Integer> minHeap = new Heap<>();
 	Heap<Integer> maxHeap = new Heap<>(Comparator.reverseOrder());
-	minHeap.add(8);
-	minHeap.add(2);
-	minHeap.add(3);
-	minHeap.add(1);
-	while (minHeap.hasNext()) {
-	    System.out.println(minHeap.pop());
+	maxHeap.add(8);
+	maxHeap.add(2);
+	maxHeap.add(3);
+	maxHeap.add(1);
+	while (maxHeap.hasNext()) {
+	    System.out.println(maxHeap.poll());
 	}
     }
 
