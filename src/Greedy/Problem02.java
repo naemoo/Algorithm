@@ -6,23 +6,7 @@ import java.util.*;
  * Kruskal's Algorithm 
 */
 
-class Edge implements Comparable<Edge>{
-	int i;
-	int j;
-	int w;
-	public Edge(int i, int j,int w) {
-		this.i = i;
-		this.j = j;
-		this.w = w;
-	}
-	public int compareTo(Edge e) {
-		return w - e.w;
-	};
-	@Override
-	public String toString() {
-		return "i : " + i + " j : "+j + " W : " +w;
-	}
-}
+
 
 class Node{
 	int parent;
@@ -100,10 +84,13 @@ class KruskalDS2{
 				num++;
 			}
 		}
+		for(int k = 1 ;k<U.length;k++) {
+			System.out.println(U[k]);
+		}
 	}
 }
 
-public class Problem2 {
+public class Problem02 {
 	public static void main(String[] args) {
 		//Algorithm 4.2 Kruskal's Algorithm과 Appendix C의 Disjoint Set Data Structure II
 		int n = 5;
@@ -126,6 +113,7 @@ public class Problem2 {
 		System.out.println();
 		
 		//자작 데이터
+		/*
 		n = 6;
 		m = 9;
 		E = new LinkedList<Edge>();
@@ -145,6 +133,7 @@ public class Problem2 {
 		for(int i = 0 ;i<F.size();i++) {
 			System.out.println(F.get(i));
 		}
+		*/
 	}
 }
 
