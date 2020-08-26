@@ -25,7 +25,7 @@ class Edge implements Comparable<Edge>{
 	}
 }
 
-public class Problem3 {
+public class Problem03 {
 	static int INF = 1000000;
 	
 	public static void dijkstra(int n,int W[][],List<Edge> F) {
