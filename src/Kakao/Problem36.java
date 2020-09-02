@@ -15,9 +15,7 @@ public class Problem36 {
     public static int solution(int[][] board) {
 	map = board;
 	n = board.length;
-	map[0][0] = 2;
 	setMinByShortest();
-	System.out.println(min);
 	return min;
     }
 
