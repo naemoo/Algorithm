@@ -1,5 +1,10 @@
 package Greedy;
 
+/*
+ * https://www.acmicpc.net/problem/10282
+ * 해킹(다익스트라 알고리즘)
+*/
+
 import java.io.*;
 import java.util.*;
 
@@ -16,46 +21,48 @@ public class Problem08 {
 		map.computeIfAbsent(Integer.parseInt(dependency[1]), k -> new HashMap<>())
 			.put(Integer.parseInt(dependency[0]), Integer.parseInt(dependency[2]));
 	    }
-	    for (int j = 1; j <= Integer.parseInt(info[0]); j++) {
-		map.computeIfAbsent(j, k -> new HashMap<>()).put(j, 0);
-	    }
-
 	    int[] answer = spreadVirus(Integer.parseInt(info[0]), Integer.parseInt(info[2]), map);
 	    System.out.println(answer[0] + " " + answer[1]);
+	    map.clear();
 	}
     }
 
     private static int[] spreadVirus(int computerNumber, int start, HashMap<Integer, HashMap<Integer, Integer>> map) {
 	int[] length = new int[computerNumber + 1];
+	boolean[] visit = new boolean[computerNumber + 1];
 	int[] answer = new int[] { 1, 0 };
 	int near = start;
 	Arrays.fill(length, Integer.MAX_VALUE);
-	length[start] = -1;
+	length[start] = 0;
+	visit[start] = true;
 	while (near > 0) {
 	    reNew(length, start, near, map);
-	    near = getSmallIdx(length);
+	    near = getSmallIdx(length, visit);
 	    if (near > 0) {
 		answer[0]++;
 		answer[1] = Math.max(answer[1], length[near]);
-		length[near] = -1;
+		visit[near] = true;
 	    }
 	}
 	return answer;
     }
 
     private static void reNew(int[] length, int start, int near, HashMap<Integer, HashMap<Integer, Integer>> map) {
-	for (Map.Entry<Integer, Integer> entry : map.get(near).entrySet()) {
-	    Integer des = entry.getKey();
-	    length[des] = Math.min(length[des],
-		    map.get(start).getOrDefault(near, 0) + map.get(near).getOrDefault(des, 0));
+	if (map.containsKey(near)) {
+	    for (Map.Entry<Integer, Integer> entry : map.get(near).entrySet()) {
+		Integer des = entry.getKey();
+		length[des] = Integer.min(length[des],
+			length[near] + map.get(near).getOrDefault(des, Integer.MAX_VALUE - length[near]));
+	    }
 	}
+
     }
 
-    private static int getSmallIdx(int[] length) {
+    private static int getSmallIdx(int[] length, boolean[] visit) {
 	int min = Integer.MAX_VALUE - 1;
 	int idx = -1;
 	for (int i = 1; i < length.length; i++) {
-	    if (0 < length[i] && length[i] <= min) {
+	    if (!visit[i] && length[i] <= min) {
 		idx = i;
 		min = length[i];
 	    }
