@@ -1,6 +1,5 @@
 package DivideAndConquer;
 
-import java.util.*;
 import java.io.*;
 
 public class Problem6 {
@@ -22,20 +21,12 @@ public class Problem6 {
 	StringBuilder answer = new StringBuilder();
 	if (isAllSame(startX, startY, endX, endY)) {
 	    return String.valueOf(map[startX][startY]);
-	} else if (endX - startX == 2) {
-	    answer.append("(");
-	    for (int i = startX; i < endX; i++) {
-		for (int j = startY; j < endY; j++) {
-		    answer.append(map[i][j]);
-		}
-	    }
-	    answer.append(")");
 	} else {
 	    answer.append("(");
-	    answer.append(getQuadTree(startX, startY, endX / 2, endY / 2));
-	    answer.append(getQuadTree(startX, endY / 2, endX / 2, endY));
-	    answer.append(getQuadTree(endX / 2, startY, endX, endY / 2));
-	    answer.append(getQuadTree(endX / 2, endY / 2, endX, endY));
+	    answer.append(getQuadTree(startX, startY, (startX + endX) / 2, (startY + endY) / 2));
+	    answer.append(getQuadTree(startX, (startY + endY) / 2, (startX + endX) / 2, endY));
+	    answer.append(getQuadTree((startX + endX) / 2, startY, endX, (startY + endY) / 2));
+	    answer.append(getQuadTree((startX + endX) / 2, (startY + endY) / 2, endX, endY));
 	    answer.append(")");
 	}
 	return answer.toString();
@@ -52,5 +43,4 @@ public class Problem6 {
 	}
 	return true;
     }
-
 }
