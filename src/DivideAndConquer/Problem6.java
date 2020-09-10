@@ -1,3 +1,6 @@
+/*
+ * https://www.acmicpc.net/problem/1992
+*/
 package DivideAndConquer;
 
 import java.io.*;
