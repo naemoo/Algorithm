@@ -1,7 +1,12 @@
+/*
+ * https://www.acmicpc.net/problem/10816
+ * 숫자카드2
+*/
 package BinarySearch;
 
 import java.io.*;
 import java.util.*;
+import java.util.function.Predicate;
 
 public class Problem02 {
     public static void main(String[] args) throws IOException {
@@ -20,33 +25,17 @@ public class Problem02 {
     }
 
     private static int getCount(int[] cards, int target) {
-	int upper = upperBound(cards, target);
-	int lower = lowerBound(cards, target);
-	return upper - lower;
+	return bound(cards, target, true) - bound(cards, target, false);
     }
 
-    private static int upperBound(int[] cards, int target) {
+    private static int bound(int[] cards, int target, boolean isUpper) {
 	int left = 0;
 	int right = cards.length;
+	Predicate<Integer> isProper = isUpper ? idx -> target >= cards[idx] : idx -> target > cards[idx];
 
 	while (left < right) {
 	    int mid = (left + right) / 2;
-	    if (target >= cards[mid]) {
-		left = mid + 1;
-	    } else {
-		right = mid;
-	    }
-	}
-	return right;
-    }
-
-    private static int lowerBound(int[] cards, int target) {
-	int left = 0;
-	int right = cards.length;
-
-	while (left < right) {
-	    int mid = (left + right) / 2;
-	    if (target > cards[mid]) {
+	    if (isProper.test(mid)) {
 		left = mid + 1;
 	    } else {
 		right = mid;
