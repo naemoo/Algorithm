@@ -1,3 +1,7 @@
+/*
+ * https://www.acmicpc.net/problem/3190
+ * 뱀
+*/
 package SamsungSWTest;
 
 import java.io.*;
@@ -30,6 +34,7 @@ public class Problem12 {
 		return true;
 	    } else if (map[nx][ny] == 1) {
 		addHead(Arrays.asList(nx, ny));
+		map[nx][ny] = 0;
 	    } else {
 		addHead(Arrays.asList(nx, ny));
 		body.remove(body.size() - 1);
