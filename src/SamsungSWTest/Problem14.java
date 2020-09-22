@@ -1,3 +1,6 @@
+/*
+ * SW역량 테스트 (2048)
+*/
 package SamsungSWTest;
 
 import java.util.*;
@@ -38,7 +41,6 @@ public class Problem14 {
 
     private static int[][] moveMap(int[][] map, int d) {
 	int[][] newMap = Arrays.stream(map).map(int[]::clone).toArray(int[][]::new);
-	boolean flag = false;
 	int cnt = 0;
 
 	if (d == 0) {
@@ -58,7 +60,6 @@ public class Problem14 {
 			    newMap[k][i] = newMap[k - 1][i];
 			}
 			newMap[0][i] = 0;
-			flag = true;
 		    }
 		    j--;
 		}
@@ -81,7 +82,6 @@ public class Problem14 {
 			    newMap[i][k] = newMap[i][k - 1];
 			}
 			newMap[i][0] = 0;
-			flag = true;
 		    }
 		    j--;
 		}
@@ -105,7 +105,6 @@ public class Problem14 {
 			    newMap[k][i] = newMap[k + 1][i];
 			}
 			newMap[newMap.length - 1][i] = 0;
-			flag = true;
 		    }
 		    j++;
 		}
@@ -128,7 +127,6 @@ public class Problem14 {
 			    newMap[i][k] = newMap[i][k + 1];
 			}
 			newMap[i][newMap.length - 1] = 0;
-			flag = true;
 		    }
 		    j++;
 		}
@@ -136,7 +134,7 @@ public class Problem14 {
 	    }
 
 	}
-	return flag ? newMap : null;
+	return newMap;
     }
 
     private static int getMaxValue(int[][] map) {
