@@ -12,7 +12,7 @@ public class Combination {
 	System.out.println(combination(r, str));
     }
 
-    private static <E> List<List<E>> combination(int r, List<E> list) {
+    public static <E> List<List<E>> combination(int r, List<E> list) {
 	int n = list.size();
 	List<List<E>> answer = new LinkedList<>();
 	boolean[] visit = new boolean[n];
