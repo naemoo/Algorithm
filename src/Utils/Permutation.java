@@ -14,7 +14,7 @@ public class Permutation {
 	System.out.println(permutation(n, r, Arrays.asList(1, 2, 3, 4)));
     }
 
-    private static <E> List<List<E>> permutation(int n, int r, List<E> list) {
+    public static <E> List<List<E>> permutation(int n, int r, List<E> list) {
 	boolean[] visit = new boolean[n];
 	List<List<E>> answer = new LinkedList<>();
 	dfs(r, 0, visit, answer, new LinkedList<>(), list);
