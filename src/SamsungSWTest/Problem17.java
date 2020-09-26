@@ -21,11 +21,6 @@ public class Problem17 {
 	    this.d = d;
 	}
 
-	@Override
-	public String toString() {
-	    return "Point [x=" + x + ", y=" + y + "]";
-	}
-
 	public Point move(int i) {
 	    Point np = null;
 	    int nx = x + dir[i][0];
@@ -57,12 +52,10 @@ public class Problem17 {
 		    viruses.add(new Point(i, j, 0));
 	    }
 	}
+	
+	int answer = Integer.MAX_VALUE;
 
-	List<List<Point>> combination = Combination.combination(m, viruses);
-
-	int answer = combination.size() == 0 ? 0 : Integer.MAX_VALUE;
-
-	for (List<Point> candidate : combination) {
+	for (List<Point> candidate : Combination.combination(m, viruses)) {
 	    Queue<Point> q = new LinkedList<>(candidate);
 	    visit = new boolean[n + 1][n + 1];
 	    for (Point virus : candidate) {
