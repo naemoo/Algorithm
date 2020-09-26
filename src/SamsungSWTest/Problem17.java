@@ -21,6 +21,11 @@ public class Problem17 {
 	    this.d = d;
 	}
 
+	@Override
+	public String toString() {
+	    return "Point [x=" + x + ", y=" + y + "]";
+	}
+
 	public Point move(int i) {
 	    Point np = null;
 	    int nx = x + dir[i][0];
@@ -52,35 +57,21 @@ public class Problem17 {
 		    viruses.add(new Point(i, j, 0));
 	    }
 	}
-	
-	int answer = Integer.MAX_VALUE;
 
-	for (List<Point> candidate : Combination.combination(m, viruses)) {
+	List<List<Point>> combination = Combination.combination(m, viruses);
+
+	int answer = combination.size() == 0 ? 0 : Integer.MAX_VALUE;
+
+	for (List<Point> candidate : combination) {
 	    Queue<Point> q = new LinkedList<>(candidate);
 	    visit = new boolean[n + 1][n + 1];
 	    for (Point virus : candidate) {
 		visit[virus.x][virus.y] = true;
 	    }
-
-	    if (isRight()) {
-		answer = Integer.min(spreadVirus(q), answer);
-	    }
+	    answer = Integer.min(spreadVirus(q), answer);
 	}
 
 	System.out.println(answer == Integer.MAX_VALUE ? -1 : answer);
-    }
-
-    private static boolean isRight() {
-	for (int i = 0; i < n; i++) {
-	    for (int j = 0; j < n; j++) {
-		if (map[i][j] == 0) {
-		    if (!visit[i][j]) {
-			return false;
-		    }
-		}
-	    }
-	}
-	return true;
     }
 
     private static int spreadVirus(Queue<Point> q) {
@@ -100,6 +91,17 @@ public class Problem17 {
 		}
 	    }
 
+	}
+
+	for (int i = 0; i < n; i++) {
+	    for (int j = 0; j < n; j++) {
+		if (map[i][j] == 0) {
+		    if (!visit[i][j]) {
+			tic = Integer.MAX_VALUE;
+			return tic;
+		    }
+		}
+	    }
 	}
 	return tic;
     }
