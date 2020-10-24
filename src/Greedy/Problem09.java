@@ -1,3 +1,6 @@
+/*
+ * 시간 복잡도 : O(E logV)
+*/
 package Greedy;
 
 import java.util.*;
