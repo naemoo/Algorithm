@@ -34,6 +34,5 @@ public class Dijkstra {
 		}
 	    }
 	}
-	System.out.println(length[n] != Integer.MAX_VALUE ? length[n] : "go home");
     }
 }
