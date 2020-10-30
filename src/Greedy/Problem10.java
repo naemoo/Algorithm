@@ -24,7 +24,7 @@ public class Problem10 {
     }
 
     private static void dijkstra(int startX, int startY) {
-	Queue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]);
+	Queue<int[]> pq = new PriorityQueue<>((a, b) -> a[2] - b[2]);
 	pq.add(new int[] { startX, startY, 0 });
 	int[][] dist = new int[map.length][map[0].length];
 	for (int i = 0; i < dist.length; i++) {
