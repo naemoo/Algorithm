@@ -1,48 +1,44 @@
 package Utils;
 
-import java.util.List;
-
+/*
+ * Union & Find -> Path Compression + Rank
+*/
 public class UnionFind {
 
-    static class Union {
-	class Node {
-	    int parent;
-	    int depth;
+    private class Node {
+	int parent;
+	int depth;
 
-	    public Node(int parent) {
-		this.parent = parent;
-		this.depth = 0;
-	    }
+	public Node(int parent) {
+	    this.parent = parent;
+	    this.depth = 0;
 	}
+    }
 
-	Node[] U;
-	final int n; // 정점
-	final int m; // 간선
+    Node[] U;
+    final int n; // 정점
+    final int m; // 간선
 
-	public Union(int n, List<int[]> E, List<int[]> F) {
-	    this.n = n;
-	    this.m = E.size();
-	    U = new Node[n];
+    public UnionFind(int n, int m) {
+	this.n = n;
+	this.m = m;
+	U = new Node[n];
 
-	    for (int i = 0; i < n; i++)
-		U[i] = new Node(i);
-	}
+	for (int i = 0; i < n; i++)
+	    U[i] = new Node(i);
+    }
 
-	private int find(int i) {
-	    int j = i;
-	    while (U[j].parent != j)
-		j = U[j].parent;
-	    return j;
-	}
+    private int find(int i) {
+	return U[i].parent == i ? i : (U[i].parent = find(U[i].parent));
+    }
 
-	private void merge(int p, int q) {
-	    if (U[p].depth == U[q].depth) {
-		U[p].depth += 1;
-		U[q].parent = p;
-	    } else if (U[p].depth < U[q].depth)
-		U[p].parent = q;
-	    else
-		U[q].parent = p;
-	}
+    private void merge(int p, int q) {
+	if (U[p].depth == U[q].depth) {
+	    U[p].depth += 1;
+	    U[q].parent = p;
+	} else if (U[p].depth < U[q].depth)
+	    U[p].parent = q;
+	else
+	    U[q].parent = p;
     }
 }
