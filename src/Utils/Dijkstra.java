@@ -4,12 +4,13 @@ import java.util.*;
 
 public class Dijkstra {
     static int n = 0;
-    static HashMap<Integer, HashMap<Integer, Integer>> infos = null;
+    static HashMap<Integer, HashMap<Integer, Integer>> map = null;
 
     private static void dijkstra(int start) {
 	// length : start와 각 간선 까지의 거리
 	int[] length = new int[n + 1];
 	Arrays.fill(length, Integer.MAX_VALUE);
+	length[start] = 0;
 	// { v, length} : start와 v 까지 거리
 	Queue<int[]> q = new PriorityQueue<int[]>((a, b) -> Integer.compare(a[1], b[1]));
 	q.add(new int[] { start, 0 });
@@ -22,8 +23,8 @@ public class Dijkstra {
 		continue;
 
 	    // 현재 위치에서 갈 곳이 없으면 다음 큐로
-	    if (infos.containsKey(cur)) {
-		for (Map.Entry<Integer, Integer> entry : infos.get(cur).entrySet()) {
+	    if (map.containsKey(cur)) {
+		for (Map.Entry<Integer, Integer> entry : map.get(cur).entrySet()) {
 		    int next = entry.getKey();
 		    int nxtDis = dis + entry.getValue(); // (start ~ cur ~ next 거리)
 
