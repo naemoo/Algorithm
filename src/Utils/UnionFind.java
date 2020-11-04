@@ -27,12 +27,12 @@ public class UnionFind {
     }
 
     // Path Compression
-    private int find(int i) {
+    public int find(int i) {
 	return U[i].parent == i ? i : (U[i].parent = find(U[i].parent));
     }
 
     // Rank System
-    private void merge(int p, int q) {
+    public void merge(int p, int q) {
 	p = find(p);
 	q = find(q);
 
