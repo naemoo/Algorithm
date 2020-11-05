@@ -1,4 +1,4 @@
-package Greedy;
+package Utils;
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ public class Dijkstra {
     static int n = 0;
     static HashMap<Integer, HashMap<Integer, Integer>> map = null;
 
-    private static void dijkstra(int start) {
+    public static void dijkstra(int start) {
 	// length : start와 각 간선 까지의 거리
 	int[] length = new int[n + 1];
 	Arrays.fill(length, Integer.MAX_VALUE);
