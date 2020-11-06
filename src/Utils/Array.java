@@ -45,7 +45,7 @@ public class Array {
 	return newArr;
     }
     
-    private static int[][] zeroPadding(int m, int[][] arr) {
+    public static int[][] zeroPadding(int m, int[][] arr) {
 	int n = arr.length;
 	int[][] newArr = new int[2 * m + n - 2][2 * m + n - 2];
 	for (int i = 0; i < n; i++) {
